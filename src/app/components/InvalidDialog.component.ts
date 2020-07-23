@@ -12,10 +12,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
  </div>
 `
 })
-export class LogoutDialogComponent {
+export class InvalidDialogComponent {
 
     constructor(
-        public dialogRef: MatDialogRef<LogoutDialogComponent>) { }
+        public dialogRef: MatDialogRef<InvalidDialogComponent>) { }
 
     close(): void {
         this.dialogRef.close();

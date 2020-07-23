@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NoopScrollStrategy } from '@angular/cdk/overlay';
-import { LogoutDialogComponent } from '../logoutDialog.component';
+import { InvalidDialogComponent } from '../InvalidDialog.component';
 
 @Component({
   selector: 'app-login-component',
@@ -45,7 +45,7 @@ export class LoginComponentComponent implements OnInit {
         if (currentCred.filter(x => x.password == password).length > 0) {
           this.router.navigate(['/listing']);
         } else {
-          this.dialog.open(LogoutDialogComponent, {
+          this.dialog.open(InvalidDialogComponent, {
             width: '600px',
             scrollStrategy: new NoopScrollStrategy()
           });

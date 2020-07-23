@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { TestComponent } from './test/test.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +24,7 @@ import { TestComponent } from './test/test.component';
     DeleteVendorComponent,
     AddVendorComponent,
     RegistrationComponentComponent,
-    LoginComponentComponent,
-    TestComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,
