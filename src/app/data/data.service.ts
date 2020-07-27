@@ -33,24 +33,18 @@ export class DataService {
   }
 
   addVendor(data) {
-    debugger
-
     var getData = JSON.parse(localStorage.getItem("vendorData"));
     getData.push(data);
     localStorage.setItem("vendorData", JSON.stringify(getData));
   }
 
   updateVendor(data) {
-    debugger
     var aa = JSON.parse(localStorage.getItem("vendorData"))[data.id - 1]
     var getData = localStorage.getItem("vendorData").replace(JSON.stringify(aa), JSON.stringify(data))
-    // 
-    // getData.push(data);
     localStorage.setItem("vendorData", getData);
   }
 
   deleteVendor(index) {
-    // data after deleting
     const data = JSON.parse(localStorage.getItem("vendorData")).filter(x => x.id !== index);
     localStorage.setItem("vendorData", JSON.stringify(data));
 

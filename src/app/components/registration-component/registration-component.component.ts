@@ -24,7 +24,6 @@ export class RegistrationComponentComponent implements OnInit {
   }
 
   register(): void {
-    debugger
     if (this.form.valid) {
       const email = this.form.get('email').value;
       const password = this.form.get('password').value;

@@ -37,13 +37,12 @@ export class AddVendorComponent implements OnInit {
       this.modalHeader = "Create Venor"
       this.vendorCreate.id = JSON.parse(localStorage.getItem("vendorData")).length + 1;
     }
-    throw new Error("Method not implemented.");
   }
 
   /**
   * Creates update user form
 */
-  createForm() {
+  public createForm() {
     this.userForm = this.fb.group({
       vendorName: ['', [Validators.required]],
       address: ['', [Validators.required]],
@@ -57,7 +56,6 @@ export class AddVendorComponent implements OnInit {
     * @param userData Contains User Data.
  */
   public editUser(userData) {
-    debugger
     this.vendorCreate.id = userData.id;
     this.userForm.get('vendorName').setValue(userData.vendorName);
     this.userForm.get('address').setValue(userData.address);
@@ -69,13 +67,10 @@ export class AddVendorComponent implements OnInit {
   }
 
   onSubmit(): void {
-    debugger
     if (this.userForm.valid) {
       this.vendorCreate.vendorName = this.userForm.get('vendorName').value,
         this.vendorCreate.address = this.userForm.get('address').value,
         this.vendorCreate.category = this.userForm.get('category').value
-
-
 
       this.event.emit({ data: this.vendorCreate });
       this.dialogRef.close();

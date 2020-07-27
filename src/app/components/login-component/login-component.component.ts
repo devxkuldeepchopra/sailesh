@@ -34,7 +34,6 @@ export class LoginComponentComponent implements OnInit {
   async onSubmit() {
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
-    debugger
     if (this.form.valid) {
       try {
         const email = this.form.get('email').value;

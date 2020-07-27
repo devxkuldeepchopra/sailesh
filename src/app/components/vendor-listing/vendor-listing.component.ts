@@ -47,7 +47,6 @@ export class VendorListingComponent {
       scrollStrategy: new NoopScrollStrategy()
     });
     dialogRef.componentInstance.event.subscribe((result) => {
-      debugger
       this.dataService.addVendor(result.data);
       this.dataSource = new MatTableDataSource(JSON.parse(localStorage.getItem('vendorData')));
       this.dataSource.paginator = this.paginator;
@@ -55,7 +54,6 @@ export class VendorListingComponent {
   }
 
   delete(element): void {
-    debugger;
     localStorage.setItem("deletedItem", element)
     let dialogRef = this.dialog.open(DeleteVendorComponent, {
       width: '300px',
@@ -70,24 +68,16 @@ export class VendorListingComponent {
   }
 
   edit(element): void {
-    debugger;
     let dialogRef = this.dialog.open(AddVendorComponent, {
       width: '600px',
       data: element,
       scrollStrategy: new NoopScrollStrategy()
     });
     dialogRef.componentInstance.event.subscribe((result) => {
-      debugger
       this.dataService.updateVendor(result.data);
       this.dataSource = JSON.parse(localStorage.getItem('vendorData'));
     });
   }
-
-  // search(event): void {
-  //   debugger
-  //   var getData = JSON.parse(localStorage.getItem("vendorData")).filter(item => item.vendorName.toLowerCase().indexOf(event) > -1);
-  //   this.dataSource = getData;
-  // }
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
